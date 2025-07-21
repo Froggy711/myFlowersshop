@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowersBloom - ร้านดอกไม้สำหรับคนพิเศษ</title>
+    <link rel="stylesheet" href="front.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;700&family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">FlowersBloom</h1>
+            <nav>
+                <!-- Search Bar ย้ายมาอยู่ตรงนี้ -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="ค้นหาสินค้า...">
+                </div>
+
+                <!-- ตะกร้าสินค้า -->
+                <div id="cart-icon">
+                    🛒
+                    <span id="cart-count">0</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>ดอกไม้ที่สวยงาม เหมาะกับคนสำคัญ</h2>
+            <p>ดอกไม้สดและไม้ประดับคุณภาพดี พร้อมจัดส่งถึงมือคุณ</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">สินค้าทั้งหมด</h2>
+
+        <!-- Search Bar ถูกย้ายออกไปจากตรงนี้แล้ว -->
+
+        <div id="filter-container" class="filter-container">
+            <!-- ปุ่ม Filter จะถูกสร้างโดย JavaScript -->
+        </div>
+
+        <div class="sort-container">
+            <label>เรียงตาม:</label>
+            <div class="custom-select" data-value="default">
+                <div class="custom-select__trigger">
+                    <span>ค่าเริ่มต้น</span>
+                    <div class="arrow"></div>
+                </div>
+                <div class="custom-options">
+                    <span class="custom-option selected" data-value="default">ค่าเริ่มต้น</span>
+                    <span class="custom-option" data-value="price-asc">ราคา: น้อยไปมาก</span>
+                    <span class="custom-option" data-value="price-desc">ราคา: มากไปน้อย</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="product-list" class="product-grid">
+            <!-- สินค้าจะถูกสร้างโดย JavaScript -->
+        </div>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <!-- Modals (Cart & Checkout) -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2>ตะกร้าสินค้า</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <h3>ยอดรวม: <span id="cart-total">0.00</span> บาท</h3>
+                <button id="checkout-button" class="btn btn-primary">ไปยังหน้าชำระเงิน</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2>กรอกข้อมูลสำหรับจัดส่ง</h2>
+            <form id="checkout-form">
+                <label for="name">ชื่อ-นามสกุลผู้รับ:</label>
+                <input type="text" id="name" name="name" placeholder="เช่น สมหญิง รักดี" required>
+                <label for="address">ที่อยู่สำหรับจัดส่ง:</label>
+                <textarea id="address" name="address" rows="4" placeholder="บ้านเลขที่, ถนน, ตำบล, อำเภอ, จังหวัด, รหัสไปรษณีย์" required></textarea>
+                <label for="phone">เบอร์โทรศัพท์:</label>
+                <input type="tel" id="phone" name="phone" placeholder="0812345678" required>
+                <button type="submit" class="btn btn-primary">ยืนยันการสั่งซื้อ</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 FlowersBloom. All Rights Reserved.</p>
+    </footer>
+
+    <script src="funtion.js"></script>
+</body>
+</html>
